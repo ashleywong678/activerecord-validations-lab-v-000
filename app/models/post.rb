@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   def clickbait
     bait = ["Won't Believe", "Secret", "Top[number]", "Guess"]
     if title
-      bait.each {|word| title.include?(word)}
+      if bait.none? {|word| title.include?(word)}
     end
   end
 

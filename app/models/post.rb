@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
     bait = ["Won't Believe", "Secret", "Top[number]", "Guess"]
     if title
       if bait.none? {|word| title.include?(word)}
+        errors[:title] << "Must be clickbait"
+      end
     end
   end
 
